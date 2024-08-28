@@ -3,3 +3,6 @@ spring:
     name: countries-springboot
   profiles:
     active: dev
+logging:
+  level:
+    root: info
