@@ -1,6 +1,7 @@
 package com.emrebayrakdev.countriesspringboot.services.country;
 
 import com.emrebayrakdev.countriesspringboot.entities.Country;
+import com.emrebayrakdev.countriesspringboot.initalizer.CountryInitializer;
 import com.emrebayrakdev.countriesspringboot.repositories.country.ICountryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,6 +20,13 @@ public class CountryService implements ICountryService {
 
     @Override
     public List<Country> getAllCountries() {
+        return _countryRepository.findAll();
+    }
+
+    @Override
+    public List<Country> insertCountries() {
+        var countryList = CountryInitializer.readCountries();
+        _countryRepository.saveAll(countryList);
         return _countryRepository.findAll();
     }
 }

@@ -1,11 +1,9 @@
 package com.emrebayrakdev.countriesspringboot.entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import java.util.List;
 
@@ -13,15 +11,23 @@ import java.util.List;
 @Table
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Country {
 
     @Id
-    private String id;
+    @GeneratedValue
+    @Column(unique=true)
+    private Long id;
+    private String code;
     private String name;
     private String nativeName;
     private int phone;
     private String capital;
     private String continent;
     private String currency;
+    private String languages;
+    private String flagUrl;
     //private List<Language> languages;
 }
