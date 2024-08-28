@@ -1,0 +1,16 @@
+version: '4.33.1'
+services:
+  postgresql:
+    image: postgres
+    container_name: postgres_countries
+    environment:
+      POSTGRES_DATABASE: countriesdev_db
+      POSTGRES_HOST: postgresql
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: p.postgres
+      POSTGRES_ROOT_PASSWORD: root
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgresql/data:/var/lib/postgresql/data
+
