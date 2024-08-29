@@ -37,9 +37,13 @@ public class CountryService implements ICountryService {
 
     @Override
     public Country createCounty(Country entity) {
-        _countryRepository.findByCode(entity.getCode())
-                .orElseThrow(() -> new CountryException("Exist Code Error"));
-        return  _countryRepository.save(entity);
+        var country = findByCodeCountry(entity.getCode());
+        if (country != null) {
+            throw new CountryException();
+        }
+        else{
+            return  _countryRepository.save(entity);
+        }
     }
 
     @Override

@@ -6,6 +6,7 @@ import com.emrebayrakdev.countriesspringboot.entities.Country;
 import com.emrebayrakdev.countriesspringboot.initalizer.CountryInitializer;
 import com.emrebayrakdev.countriesspringboot.mapper.IMapper;
 import com.emrebayrakdev.countriesspringboot.services.country.ICountryService;
+import com.emrebayrakdev.countriesspringboot.utils.GenericResponse;
 import com.emrebayrakdev.countriesspringboot.utils.constants.Api;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -21,9 +22,13 @@ public class CountryController {
     private final ICountryService _countryService;
     private IMapper _mapper;
 
+
     @GetMapping("/getAll")
-    public List<Country> GetAllCountries(){
-       return _countryService.getAllCountries();
+    public GenericResponse<List<Country>> GetAllCountries(){
+        var response = _countryService.getAllCountries();
+        return GenericResponse.<List<Country>>builder().
+               success(true).
+               data(response).build();
     }
 
     @GetMapping("/getAllJsonFile")
@@ -36,10 +41,13 @@ public class CountryController {
         return _countryService.insertCountries();
     }
     @PostMapping("/createCountry")
-    public ResponseEntity<GetCountryDto> insertCountry(@RequestBody CreateCountryDto entity){
+    public GenericResponse<GetCountryDto> insertCountry(@RequestBody CreateCountryDto entity){
         Country mappedCountry = _mapper.toCountry(entity);
         Country country = _countryService.createCounty(mappedCountry);
-        return ResponseEntity.ok(_mapper.fromGetCountry(country));
+        var response = _mapper.fromGetCountry(country);
+        return GenericResponse.<GetCountryDto>builder()
+                .success(true)
+                .data(response).build();
     }
 
 
