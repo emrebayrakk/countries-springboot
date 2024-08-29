@@ -8,5 +8,6 @@ import java.util.List;
 public interface ICountryService {
     List<Country> getAllCountries();
     List<Country> insertCountries();
-    GetCountryDto createCounty(CreateCountryDto entity);
+    Country createCounty(Country entity);
+    Country findByCodeCountry(String code);
 }

@@ -3,7 +3,9 @@ package com.emrebayrakdev.countriesspringboot.services.country;
 import com.emrebayrakdev.countriesspringboot.dtos.CreateCountryDto;
 import com.emrebayrakdev.countriesspringboot.dtos.GetCountryDto;
 import com.emrebayrakdev.countriesspringboot.entities.Country;
+import com.emrebayrakdev.countriesspringboot.exceptions.CountryException;
 import com.emrebayrakdev.countriesspringboot.initalizer.CountryInitializer;
+import com.emrebayrakdev.countriesspringboot.mapper.IMapper;
 import com.emrebayrakdev.countriesspringboot.repositories.country.ICountryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -19,6 +21,7 @@ public class CountryService implements ICountryService {
     /* public CountryService(ICountryRepository countryRepository) {
         _countryRepository = countryRepository;
     }*/
+    private IMapper _mapper;
 
     @Override
     public List<Country> getAllCountries() {
@@ -33,25 +36,14 @@ public class CountryService implements ICountryService {
     }
 
     @Override
-    public GetCountryDto createCounty(CreateCountryDto entity) {
-        Country country = new Country();
-        country.setName(entity.getName());
-        country.setCode(entity.getCode());
-        country.setCapital(entity.getCapital());
-        country.setCurrency(entity.getCurrency());
-        country.setFlagUrl(entity.getFlagUrl());
-        country.setContinent(entity.getContinent());
-        country.setLanguages(entity.getLanguages());
-        country.setPhone(entity.getPhone());
-        country.setNativeName(entity.getNativeName());
-        Country savedCountry = _countryRepository.save(country);
-        if(savedCountry != null) {
-            GetCountryDto getCountryDto = new GetCountryDto();
-            getCountryDto.setName(savedCountry.getName());
-            getCountryDto.setNativeName(savedCountry.getNativeName());
-            getCountryDto.setCurrency(savedCountry.getCurrency());
-            return getCountryDto;
-        }
-        return null;
+    public Country createCounty(Country entity) {
+        _countryRepository.findByCode(entity.getCode())
+                .orElseThrow(() -> new CountryException("Exist Code Error"));
+        return  _countryRepository.save(entity);
+    }
+
+    @Override
+    public Country findByCodeCountry(String code) {
+        return _countryRepository.findByCode(code).orElse(null);
     }
 }

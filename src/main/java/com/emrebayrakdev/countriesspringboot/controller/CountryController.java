@@ -4,6 +4,7 @@ import com.emrebayrakdev.countriesspringboot.dtos.CreateCountryDto;
 import com.emrebayrakdev.countriesspringboot.dtos.GetCountryDto;
 import com.emrebayrakdev.countriesspringboot.entities.Country;
 import com.emrebayrakdev.countriesspringboot.initalizer.CountryInitializer;
+import com.emrebayrakdev.countriesspringboot.mapper.IMapper;
 import com.emrebayrakdev.countriesspringboot.services.country.ICountryService;
 import com.emrebayrakdev.countriesspringboot.utils.constants.Api;
 import lombok.AllArgsConstructor;
@@ -18,6 +19,7 @@ import java.util.List;
 public class CountryController {
 
     private final ICountryService _countryService;
+    private IMapper _mapper;
 
     @GetMapping("/getAll")
     public List<Country> GetAllCountries(){
@@ -35,7 +37,9 @@ public class CountryController {
     }
     @PostMapping("/createCountry")
     public ResponseEntity<GetCountryDto> insertCountry(@RequestBody CreateCountryDto entity){
-        return ResponseEntity.ok(_countryService.createCounty(entity));
+        Country mappedCountry = _mapper.toCountry(entity);
+        Country country = _countryService.createCounty(mappedCountry);
+        return ResponseEntity.ok(_mapper.fromGetCountry(country));
     }
 
 
