@@ -12,4 +12,11 @@ public interface ICountryService {
     Country createCounty(Country entity);
     Country findByCodeCountry(String code);
     List<Country> parseAndSaveCountries();
+    List<GetCountryDto> findByLanguageEnJPQLNative();
+
+    List<GetCountryDto> findByLanguageJPQLNative(String language);
+
+    List<GetCountryDto> findByLanguageEnJPQL();
+
+    List<GetCountryDto> findByLanguageJPQL(String language);
 }

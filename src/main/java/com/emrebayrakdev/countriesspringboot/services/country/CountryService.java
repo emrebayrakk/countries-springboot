@@ -1,14 +1,13 @@
 package com.emrebayrakdev.countriesspringboot.services.country;
 
-import com.emrebayrakdev.countriesspringboot.dtos.CreateCountryDto;
 import com.emrebayrakdev.countriesspringboot.dtos.GetCountryDto;
 import com.emrebayrakdev.countriesspringboot.entities.Country;
 import com.emrebayrakdev.countriesspringboot.entities.Language;
 import com.emrebayrakdev.countriesspringboot.exceptions.CountryException;
-import com.emrebayrakdev.countriesspringboot.initalizer.CountryInitializer;
 import com.emrebayrakdev.countriesspringboot.mapper.IMapper;
+import com.emrebayrakdev.countriesspringboot.mapper.converter.CountryWithLanguageConverter;
 import com.emrebayrakdev.countriesspringboot.repositories.country.ICountryRepository;
-import com.emrebayrakdev.countriesspringboot.repositories.country.ILanguageRepository;
+import com.emrebayrakdev.countriesspringboot.repositories.language.ILanguageRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -33,27 +32,13 @@ public class CountryService implements ICountryService {
 
     @Override
     public List<Country> getAllCountries() {
-        var response = _countryRepository.findAll();
-        return response;
+        return _countryRepository.findAll();
     }
 
     @Override
     public List<GetCountryDto> getAllCustomMapperCountries() {
         var response = _countryRepository.findAll();
-        List<GetCountryDto> dtos = new ArrayList<>();
-        for (Country dto : response){
-          GetCountryDto data = new GetCountryDto();
-          data.setId(dto.getId());
-          data.setName(dto.getName());
-          data.setNativeName(dto.getNativeName());
-          List<String> lang = new ArrayList<>();
-          for (Language language : dto.getLanguages()){
-              lang.add(language.getName());
-          }
-          data.setLanguages(lang);
-          dtos.add(data);
-        }
-        return dtos;
+        return CountryWithLanguageConverter.toDto(response);
     }
 
     @Override
@@ -129,6 +114,30 @@ public class CountryService implements ICountryService {
             System.out.println("Error reading countries file");
         }
         return countryList;
+    }
+
+    @Override
+    public List<GetCountryDto> findByLanguageEnJPQLNative() {
+        var response = _countryRepository.findByLanguageEnJPQLNative();
+        return CountryWithLanguageConverter.toDto(response);
+    }
+
+    @Override
+    public List<GetCountryDto> findByLanguageJPQLNative(String language) {
+        var response = _countryRepository.findByLanguageJPQLNative(language);
+        return CountryWithLanguageConverter.toDto(response);
+    }
+
+    @Override
+    public List<GetCountryDto> findByLanguageEnJPQL() {
+        var response = _countryRepository.findByLanguageEnJPQL();
+        return CountryWithLanguageConverter.toDto(response);
+    }
+
+    @Override
+    public List<GetCountryDto> findByLanguageJPQL(String language) {
+        var response = _countryRepository.findByLanguageJPQL(language);
+        return CountryWithLanguageConverter.toDto(response);
     }
 
     private static String generatedFlagUrl(String id) {

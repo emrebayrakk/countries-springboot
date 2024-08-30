@@ -44,6 +44,40 @@ public class CountryController {
                 data(response).build();
     }
 
+    @GetMapping("/getCountryByLanguageEnCountries")
+    public GenericResponse<List<GetCountryDto>> GetCountryByLanguageEnCountries(){
+        var response = _countryService.findByLanguageEnJPQLNative();
+        String message = _messageService.getMessage(I18nConstants.COUNTRY_SUCCESSFUL, LocaleContextHolder.getLocale());
+        return GenericResponse.<List<GetCountryDto>>builder().
+                success(true).message(message).
+                data(response).build();
+    }
+    @GetMapping("/GetCountryByLanguageCountries")
+    public GenericResponse<List<GetCountryDto>> GetCountryByLanguageCountries(@RequestParam String language){
+        var response = _countryService.findByLanguageJPQLNative(language);
+        String message = _messageService.getMessage(I18nConstants.COUNTRY_SUCCESSFUL, LocaleContextHolder.getLocale());
+        return GenericResponse.<List<GetCountryDto>>builder().
+                success(true).message(message).
+                data(response).build();
+    }
+
+    @GetMapping("/jpql/getCountryByLanguageEnCountries")
+    public GenericResponse<List<GetCountryDto>> GetCountryByLanguageEnCountriesJPQL(){
+        var response = _countryService.findByLanguageEnJPQL();
+        String message = _messageService.getMessage(I18nConstants.COUNTRY_SUCCESSFUL, LocaleContextHolder.getLocale());
+        return GenericResponse.<List<GetCountryDto>>builder().
+                success(true).message(message).
+                data(response).build();
+    }
+    @GetMapping("/jpql/GetCountryByLanguageCountries")
+    public GenericResponse<List<GetCountryDto>> GetCountryByLanguageCountriesJPQL(@RequestParam String language){
+        var response = _countryService.findByLanguageJPQL(language);
+        String message = _messageService.getMessage(I18nConstants.COUNTRY_SUCCESSFUL, LocaleContextHolder.getLocale());
+        return GenericResponse.<List<GetCountryDto>>builder().
+                success(true).message(message).
+                data(response).build();
+    }
+
     @GetMapping("/getAllJsonFile")
     public List<Country> getAllJsonFile(){
         return CountryInitializer.readCountries();
