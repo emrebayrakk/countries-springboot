@@ -35,10 +35,8 @@ public class Country {
     private String continent;
 
     private String currency;
-
-    private String languages;
-
-    @Column(unique=true)
     private String flagUrl;
-    //private List<Language> languages;
+
+    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Language> languages;
 }

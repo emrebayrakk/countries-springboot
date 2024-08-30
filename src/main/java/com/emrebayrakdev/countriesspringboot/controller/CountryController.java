@@ -35,6 +35,14 @@ public class CountryController {
                success(true).message(message).
                data(response).build();
     }
+    @GetMapping("/getAllCustomMapper")
+    public GenericResponse<List<GetCountryDto>> GetAllCustomMapperCountries(){
+        var response = _countryService.getAllCustomMapperCountries();
+        String message = _messageService.getMessage(I18nConstants.COUNTRY_SUCCESSFUL, LocaleContextHolder.getLocale());
+        return GenericResponse.<List<GetCountryDto>>builder().
+                success(true).message(message).
+                data(response).build();
+    }
 
     @GetMapping("/getAllJsonFile")
     public List<Country> getAllJsonFile(){
@@ -45,6 +53,7 @@ public class CountryController {
     public List<Country> insertCountries(){
         return _countryService.insertCountries();
     }
+    /*
     @PostMapping("/createCountry")
     public GenericResponse<GetCountryDto> insertCountry(@RequestBody CreateCountryDto entity){
         Country mappedCountry = _mapper.toCountry(entity);
@@ -55,7 +64,7 @@ public class CountryController {
                 .success(true).message(message)
                 .data(response).build();
     }
-
+    */
 
 
 }

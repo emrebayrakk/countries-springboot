@@ -1,9 +1,10 @@
 package com.emrebayrakdev.countriesspringboot.dtos;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import com.emrebayrakdev.countriesspringboot.entities.Language;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -18,4 +19,5 @@ public class GetCountryDto {
     private String name;
     private String nativeName;
     private String currency;
+    private List<String> languages;
 }

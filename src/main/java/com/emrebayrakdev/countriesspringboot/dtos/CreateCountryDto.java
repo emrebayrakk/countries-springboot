@@ -1,6 +1,9 @@
 package com.emrebayrakdev.countriesspringboot.dtos;
 
+import com.emrebayrakdev.countriesspringboot.entities.Language;
 import lombok.*;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -15,6 +18,6 @@ public class CreateCountryDto {
     private String capital;
     private String continent;
     private String currency;
-    private String languages;
     private String flagUrl;
+    private List<Language> languages;
 }

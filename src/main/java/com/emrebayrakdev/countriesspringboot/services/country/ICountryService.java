@@ -7,7 +7,9 @@ import java.util.List;
 
 public interface ICountryService {
     List<Country> getAllCountries();
+    List<GetCountryDto> getAllCustomMapperCountries();
     List<Country> insertCountries();
     Country createCounty(Country entity);
     Country findByCodeCountry(String code);
+    List<Country> parseAndSaveCountries();
 }
