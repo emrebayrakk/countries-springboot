@@ -249,3 +249,144 @@
 2024-08-31 18:35:45,093 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-08-31 18:35:45,100 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
 2024-08-31 18:35:45,121 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2024-08-31 18:45:09,116 INFO c.e.c.CountriesSpringbootApplication [restartedMain] Starting CountriesSpringbootApplication using Java 17.0.12 with PID 10420 (C:\Users\emre\IdeaProjects\countries-springboot\target\classes started by emre in C:\Users\emre\IdeaProjects\countries-springboot)
+2024-08-31 18:45:09,120 INFO c.e.c.CountriesSpringbootApplication [restartedMain] The following 1 profile is active: "dev"
+2024-08-31 18:45:09,203 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-31 18:45:09,203 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-31 18:45:10,913 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-31 18:45:11,016 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 90 ms. Found 2 JPA repository interfaces.
+2024-08-31 18:45:11,861 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2024-08-31 18:45:11,876 INFO o.a.c.c.StandardService [restartedMain] Starting service [Tomcat]
+2024-08-31 18:45:11,877 INFO o.a.c.c.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-31 18:45:11,945 INFO o.a.c.c.C.[.[.[/api] [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-08-31 18:45:11,946 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2742 ms
+2024-08-31 18:45:12,206 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-31 18:45:12,307 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-31 18:45:12,367 INFO o.h.c.i.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2024-08-31 18:45:12,820 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-31 18:45:12,860 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-08-31 18:45:13,175 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@f1d5695
+2024-08-31 18:45:13,177 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-08-31 18:45:13,229 WARN o.h.o.deprecation [restartedMain] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-31 18:45:14,894 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-31 18:45:15,006 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-31 18:45:15,388 INFO o.s.d.j.r.q.QueryEnhancerFactory [restartedMain] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-31 18:45:16,248 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-31 18:45:16,723 WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'openAPIBuilder' defined in class path resource [org/springdoc/core/configuration/SpringDocConfiguration.class]: Unsatisfied dependency expressed through method 'openAPIBuilder' parameter 0: No qualifying bean of type 'io.swagger.v3.oas.models.OpenAPI' available: expected single matching bean but found 2: customizeOpenAPI,defineOpenApi
+2024-08-31 18:45:16,724 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [restartedMain] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-31 18:45:16,728 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
+2024-08-31 18:45:16,739 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
+2024-08-31 18:45:16,746 INFO o.a.c.c.StandardService [restartedMain] Stopping service [Tomcat]
+2024-08-31 18:45:16,772 INFO o.s.b.a.l.ConditionEvaluationReportLogger [restartedMain] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-31 18:45:16,809 ERROR o.s.b.d.LoggingFailureAnalysisReporter [restartedMain] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method openAPIBuilder in org.springdoc.core.configuration.SpringDocConfiguration required a single bean, but 2 were found:
+	- customizeOpenAPI: defined by method 'customizeOpenAPI' in class path resource [com/emrebayrakdev/countriesspringboot/config/SwaggerAPISecurityConfiguration.class]
+	- defineOpenApi: defined by method 'defineOpenApi' in class path resource [com/emrebayrakdev/countriesspringboot/config/SwaggerConfiguration.class]
+
+This may be due to missing parameter name information
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+Ensure that your compiler is configured to use the '-parameters' flag.
+You may need to update both your build tool settings as well as your IDE.
+(See https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#parameter-name-retention)
+
+
+2024-08-31 18:46:17,057 INFO c.e.c.CountriesSpringbootApplication [restartedMain] Starting CountriesSpringbootApplication using Java 17.0.12 with PID 11628 (C:\Users\emre\IdeaProjects\countries-springboot\target\classes started by emre in C:\Users\emre\IdeaProjects\countries-springboot)
+2024-08-31 18:46:17,060 INFO c.e.c.CountriesSpringbootApplication [restartedMain] The following 1 profile is active: "dev"
+2024-08-31 18:46:17,148 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-31 18:46:17,150 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-31 18:46:18,646 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-31 18:46:18,719 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 65 ms. Found 2 JPA repository interfaces.
+2024-08-31 18:46:19,476 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2024-08-31 18:46:19,492 INFO o.a.c.c.StandardService [restartedMain] Starting service [Tomcat]
+2024-08-31 18:46:19,493 INFO o.a.c.c.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-31 18:46:19,568 INFO o.a.c.c.C.[.[.[/api] [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-08-31 18:46:19,568 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2415 ms
+2024-08-31 18:46:19,786 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-31 18:46:19,884 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-31 18:46:19,944 INFO o.h.c.i.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2024-08-31 18:46:20,417 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-31 18:46:20,467 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-08-31 18:46:20,750 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@695ba455
+2024-08-31 18:46:20,753 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-08-31 18:46:20,793 WARN o.h.o.deprecation [restartedMain] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-31 18:46:22,434 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-31 18:46:22,537 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-31 18:46:22,826 INFO o.s.d.j.r.q.QueryEnhancerFactory [restartedMain] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-31 18:46:23,488 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-31 18:46:23,846 WARN o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext [restartedMain] Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'openAPIBuilder' defined in class path resource [org/springdoc/core/configuration/SpringDocConfiguration.class]: Unsatisfied dependency expressed through method 'openAPIBuilder' parameter 0: No qualifying bean of type 'io.swagger.v3.oas.models.OpenAPI' available: expected single matching bean but found 2: customizeOpenAPI,defineOpenApi
+2024-08-31 18:46:23,847 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [restartedMain] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-31 18:46:23,850 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Shutdown initiated...
+2024-08-31 18:46:23,857 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Shutdown completed.
+2024-08-31 18:46:23,865 INFO o.a.c.c.StandardService [restartedMain] Stopping service [Tomcat]
+2024-08-31 18:46:23,891 INFO o.s.b.a.l.ConditionEvaluationReportLogger [restartedMain] 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-08-31 18:46:23,918 ERROR o.s.b.d.LoggingFailureAnalysisReporter [restartedMain] 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method openAPIBuilder in org.springdoc.core.configuration.SpringDocConfiguration required a single bean, but 2 were found:
+	- customizeOpenAPI: defined by method 'customizeOpenAPI' in class path resource [com/emrebayrakdev/countriesspringboot/config/SwaggerAPISecurityConfiguration.class]
+	- defineOpenApi: defined by method 'defineOpenApi' in class path resource [com/emrebayrakdev/countriesspringboot/config/SwaggerConfiguration.class]
+
+This may be due to missing parameter name information
+
+Action:
+
+Consider marking one of the beans as @Primary, updating the consumer to accept multiple beans, or using @Qualifier to identify the bean that should be consumed
+
+Ensure that your compiler is configured to use the '-parameters' flag.
+You may need to update both your build tool settings as well as your IDE.
+(See https://github.com/spring-projects/spring-framework/wiki/Upgrading-to-Spring-Framework-6.x#parameter-name-retention)
+
+
+2024-08-31 18:47:55,967 INFO c.e.c.CountriesSpringbootApplication [restartedMain] Starting CountriesSpringbootApplication using Java 17.0.12 with PID 9436 (C:\Users\emre\IdeaProjects\countries-springboot\target\classes started by emre in C:\Users\emre\IdeaProjects\countries-springboot)
+2024-08-31 18:47:55,970 INFO c.e.c.CountriesSpringbootApplication [restartedMain] The following 1 profile is active: "dev"
+2024-08-31 18:47:56,042 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-31 18:47:56,042 INFO o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-31 18:47:57,469 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-31 18:47:57,559 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 79 ms. Found 2 JPA repository interfaces.
+2024-08-31 18:47:58,405 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat initialized with port 8080 (http)
+2024-08-31 18:47:58,422 INFO o.a.c.c.StandardService [restartedMain] Starting service [Tomcat]
+2024-08-31 18:47:58,423 INFO o.a.c.c.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/10.1.28]
+2024-08-31 18:47:58,496 INFO o.a.c.c.C.[.[.[/api] [restartedMain] Initializing Spring embedded WebApplicationContext
+2024-08-31 18:47:58,496 INFO o.s.b.w.s.c.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2453 ms
+2024-08-31 18:47:58,696 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-31 18:47:58,777 INFO o.h.Version [restartedMain] HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-31 18:47:58,827 INFO o.h.c.i.RegionFactoryInitiator [restartedMain] HHH000026: Second-level cache disabled
+2024-08-31 18:47:59,194 INFO o.s.o.j.p.SpringPersistenceUnitInfo [restartedMain] No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-31 18:47:59,225 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2024-08-31 18:47:59,507 INFO c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@555ca9b0
+2024-08-31 18:47:59,512 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2024-08-31 18:47:59,554 WARN o.h.o.deprecation [restartedMain] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-31 18:48:01,275 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-31 18:48:01,380 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-31 18:48:01,663 INFO o.s.d.j.r.q.QueryEnhancerFactory [restartedMain] Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-08-31 18:48:02,388 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-31 18:48:02,918 INFO o.s.b.d.a.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2024-08-31 18:48:02,966 INFO o.s.b.w.e.t.TomcatWebServer [restartedMain] Tomcat started on port 8080 (http) with context path '/api'
+2024-08-31 18:48:02,986 INFO c.e.c.CountriesSpringbootApplication [restartedMain] Started CountriesSpringbootApplication in 7.975 seconds (process running for 9.109)
+2024-08-31 18:48:13,253 INFO o.a.c.c.C.[.[.[/api] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-31 18:48:13,254 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2024-08-31 18:48:13,256 INFO o.s.w.s.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2024-08-31 18:48:15,729 INFO o.s.a.AbstractOpenApiResource [http-nio-8080-exec-8] Init duration for springdoc-openapi is: 883 ms
+2024-08-31 18:48:28,156 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-31 18:48:28,161 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2024-08-31 18:48:28,172 INFO c.z.h.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
