@@ -2,6 +2,7 @@ package com.emrebayrakdev.countriesspringboot.controller;
 
 import com.emrebayrakdev.countriesspringboot.dtos.CreateCountryDto;
 import com.emrebayrakdev.countriesspringboot.dtos.GetCountryDto;
+import com.emrebayrakdev.countriesspringboot.dtos.GetCustomCountryDto;
 import com.emrebayrakdev.countriesspringboot.entities.Country;
 import com.emrebayrakdev.countriesspringboot.initalizer.CountryInitializer;
 import com.emrebayrakdev.countriesspringboot.mapper.IMapper;
@@ -36,44 +37,44 @@ public class CountryController {
                data(response).build();
     }
     @GetMapping("/getAllCustomMapper")
-    public GenericResponse<List<GetCountryDto>> GetAllCustomMapperCountries(){
+    public GenericResponse<List<GetCustomCountryDto>> GetAllCustomMapperCountries(){
         var response = _countryService.getAllCustomMapperCountries();
         String message = _messageService.getMessage(I18nConstants.COUNTRY_SUCCESSFUL, LocaleContextHolder.getLocale());
-        return GenericResponse.<List<GetCountryDto>>builder().
+        return GenericResponse.<List<GetCustomCountryDto>>builder().
                 success(true).message(message).
                 data(response).build();
     }
 
     @GetMapping("/getCountryByLanguageEnCountries")
-    public GenericResponse<List<GetCountryDto>> GetCountryByLanguageEnCountries(){
+    public GenericResponse<List<GetCustomCountryDto>> GetCountryByLanguageEnCountries(){
         var response = _countryService.findByLanguageEnJPQLNative();
         String message = _messageService.getMessage(I18nConstants.COUNTRY_SUCCESSFUL, LocaleContextHolder.getLocale());
-        return GenericResponse.<List<GetCountryDto>>builder().
+        return GenericResponse.<List<GetCustomCountryDto>>builder().
                 success(true).message(message).
                 data(response).build();
     }
     @GetMapping("/GetCountryByLanguageCountries")
-    public GenericResponse<List<GetCountryDto>> GetCountryByLanguageCountries(@RequestParam String language){
+    public GenericResponse<List<GetCustomCountryDto>> GetCountryByLanguageCountries(@RequestParam String language){
         var response = _countryService.findByLanguageJPQLNative(language);
         String message = _messageService.getMessage(I18nConstants.COUNTRY_SUCCESSFUL, LocaleContextHolder.getLocale());
-        return GenericResponse.<List<GetCountryDto>>builder().
+        return GenericResponse.<List<GetCustomCountryDto>>builder().
                 success(true).message(message).
                 data(response).build();
     }
 
     @GetMapping("/jpql/getCountryByLanguageEnCountries")
-    public GenericResponse<List<GetCountryDto>> GetCountryByLanguageEnCountriesJPQL(){
+    public GenericResponse<List<GetCustomCountryDto>> GetCountryByLanguageEnCountriesJPQL(){
         var response = _countryService.findByLanguageEnJPQL();
         String message = _messageService.getMessage(I18nConstants.COUNTRY_SUCCESSFUL, LocaleContextHolder.getLocale());
-        return GenericResponse.<List<GetCountryDto>>builder().
+        return GenericResponse.<List<GetCustomCountryDto>>builder().
                 success(true).message(message).
                 data(response).build();
     }
     @GetMapping("/jpql/GetCountryByLanguageCountries")
-    public GenericResponse<List<GetCountryDto>> GetCountryByLanguageCountriesJPQL(@RequestParam String language){
+    public GenericResponse<List<GetCustomCountryDto>> GetCountryByLanguageCountriesJPQL(@RequestParam String language){
         var response = _countryService.findByLanguageJPQL(language);
         String message = _messageService.getMessage(I18nConstants.COUNTRY_SUCCESSFUL, LocaleContextHolder.getLocale());
-        return GenericResponse.<List<GetCountryDto>>builder().
+        return GenericResponse.<List<GetCustomCountryDto>>builder().
                 success(true).message(message).
                 data(response).build();
     }

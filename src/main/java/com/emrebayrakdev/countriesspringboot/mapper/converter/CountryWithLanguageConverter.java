@@ -1,6 +1,7 @@
 package com.emrebayrakdev.countriesspringboot.mapper.converter;
 
 import com.emrebayrakdev.countriesspringboot.dtos.GetCountryDto;
+import com.emrebayrakdev.countriesspringboot.dtos.GetCustomCountryDto;
 import com.emrebayrakdev.countriesspringboot.entities.Country;
 import com.emrebayrakdev.countriesspringboot.entities.Language;
 import lombok.experimental.UtilityClass;
@@ -10,10 +11,10 @@ import java.util.List;
 
 @UtilityClass
 public class CountryWithLanguageConverter {
-    public List<GetCountryDto> toDto(List<Country> countries) {
-        List<GetCountryDto> getCountryDtos = new ArrayList<>();
+    public List<GetCustomCountryDto> toDto(List<Country> countries) {
+        List<GetCustomCountryDto> getCountryDtos = new ArrayList<>();
         for (Country dto : countries){
-            GetCountryDto data = new GetCountryDto();
+            GetCustomCountryDto data = new GetCustomCountryDto();
             data.setId(dto.getId());
             data.setName(dto.getName());
             data.setNativeName(dto.getNativeName());

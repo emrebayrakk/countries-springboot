@@ -9,3 +9,6 @@ logging:
 server:
   servlet:
     context-path: /api
+springdoc:
+  api-docs:
+    path: /api-docs

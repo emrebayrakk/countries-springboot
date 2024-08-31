@@ -1,6 +1,7 @@
 package com.emrebayrakdev.countriesspringboot.services.country;
 
 import com.emrebayrakdev.countriesspringboot.dtos.GetCountryDto;
+import com.emrebayrakdev.countriesspringboot.dtos.GetCustomCountryDto;
 import com.emrebayrakdev.countriesspringboot.entities.Country;
 import com.emrebayrakdev.countriesspringboot.entities.Language;
 import com.emrebayrakdev.countriesspringboot.exceptions.CountryException;
@@ -36,7 +37,7 @@ public class CountryService implements ICountryService {
     }
 
     @Override
-    public List<GetCountryDto> getAllCustomMapperCountries() {
+    public List<GetCustomCountryDto> getAllCustomMapperCountries() {
         var response = _countryRepository.findAll();
         return CountryWithLanguageConverter.toDto(response);
     }
@@ -117,25 +118,25 @@ public class CountryService implements ICountryService {
     }
 
     @Override
-    public List<GetCountryDto> findByLanguageEnJPQLNative() {
+    public List<GetCustomCountryDto> findByLanguageEnJPQLNative() {
         var response = _countryRepository.findByLanguageEnJPQLNative();
         return CountryWithLanguageConverter.toDto(response);
     }
 
     @Override
-    public List<GetCountryDto> findByLanguageJPQLNative(String language) {
+    public List<GetCustomCountryDto> findByLanguageJPQLNative(String language) {
         var response = _countryRepository.findByLanguageJPQLNative(language);
         return CountryWithLanguageConverter.toDto(response);
     }
 
     @Override
-    public List<GetCountryDto> findByLanguageEnJPQL() {
+    public List<GetCustomCountryDto> findByLanguageEnJPQL() {
         var response = _countryRepository.findByLanguageEnJPQL();
         return CountryWithLanguageConverter.toDto(response);
     }
 
     @Override
-    public List<GetCountryDto> findByLanguageJPQL(String language) {
+    public List<GetCustomCountryDto> findByLanguageJPQL(String language) {
         var response = _countryRepository.findByLanguageJPQL(language);
         return CountryWithLanguageConverter.toDto(response);
     }
