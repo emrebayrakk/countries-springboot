@@ -1,5 +1,6 @@
 package com.emrebayrakdev.countriesspringboot.config;
 
+
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
@@ -15,7 +16,7 @@ public class SwaggerConfiguration {
     @Bean
     public OpenAPI defineOpenApi() {
         Server server = new Server();
-        server.setUrl("http://localhost:8080");
+        server.setUrl("http://localhost:8080/api");
         server.setDescription("Development");
 
         Contact myContact = new Contact();
@@ -23,9 +24,9 @@ public class SwaggerConfiguration {
         myContact.setEmail("eemmrree0@outlook.com");
 
         Info information = new Info()
-                .title("Spring Boot With Swagger API")
+                .title("Swagger With Spring Boot")
                 .version("1.0.0")
-                .description("This API exposes endpoints to manage employees.")
+                .description("Spring Boot Learning..")
                 .contact(myContact);
         return new OpenAPI().info(information).servers(List.of(server));
     }
